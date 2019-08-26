@@ -28,6 +28,10 @@ namespace Login_2._0
                 && txtPassword.Text =="123tamarindo")
             {
                 MessageBox.Show("Bienvenido Sr Don Juancho");
+                this.Hide(); //Escondemos ventana login
+                Ventana2 CursosVentana = new Ventana2();
+                CursosVentana.Show();
+                this.Visible=false;
             }
             else
             {
@@ -37,6 +41,38 @@ namespace Login_2._0
                 txtUsuario.Focus();
             }
 
+        }
+
+        private void TxtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if((int)e.KeyChar==(int)Keys.Enter)
+            {
+                if (txtUsuario.Text == "juancho"
+                && txtPassword.Text == "123tamarindo")
+                {
+                    MessageBox.Show("Bienvenido Sr Don Juancho");
+                    this.Hide(); //Escondemos ventana login
+                    Ventana2 CursosVentana = new Ventana2();
+                    CursosVentana.Show();
+                    this.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o Contraseña no valido");
+                    txtUsuario.Text = "";
+                    txtPassword.Text = "";
+                    txtUsuario.Focus();
+                }
+
+            }
+        }
+
+        private void TxtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                txtPassword.Focus();
+            }
         }
     }
 }

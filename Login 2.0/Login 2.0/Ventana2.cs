@@ -44,6 +44,9 @@ namespace Login_2._0
             {
                 seleccion = "PayPal";
             }
+            MessageBox.Show("Has seleccionado" + conteo +
+                " cursos y tu médoto de pago es " +
+                seleccion);
         }
     }
 }
