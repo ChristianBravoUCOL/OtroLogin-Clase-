@@ -16,5 +16,27 @@ namespace Login_2._0
         {
             InitializeComponent();
         }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();//Cierra el formulario
+        }
+
+        private void BtnIniciar_Click(object sender, EventArgs e)
+        {
+            if(txtUsuario.Text=="juancho" 
+                && txtPassword.Text =="123tamarindo")
+            {
+                MessageBox.Show("Bienvenido Sr Don Juancho");
+            }
+            else
+            {
+                MessageBox.Show("Usuario o Contraseña no valido");
+                txtUsuario.Text = "";
+                txtPassword.Text = "";
+                txtUsuario.Focus();
+            }
+
+        }
     }
 }
